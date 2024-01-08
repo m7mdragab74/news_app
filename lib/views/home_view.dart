@@ -23,6 +23,6 @@ class HomeView extends StatelessWidget {
             ),
           ]),
         ),
-        body: const categoriesListView());
+        body: categoriesListView());
   }
 }

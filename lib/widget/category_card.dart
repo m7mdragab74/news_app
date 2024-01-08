@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:news_app_ui_setup/models/category_model.dart';
 
 // ignore: camel_case_types
 class categoryCard extends StatelessWidget {
-  const categoryCard({super.key});
-
+  const categoryCard({super.key, required this.categories});
+  final categoryModel categories;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,14 +13,14 @@ class categoryCard extends StatelessWidget {
         height: 85,
         width: 160,
         decoration: BoxDecoration(
-            image: const DecorationImage(
-                fit: BoxFit.fill, image: AssetImage('assets/business.avif')),
+            image: DecorationImage(
+                fit: BoxFit.fill, image: AssetImage(categories.image)),
             color: Colors.amberAccent,
-            borderRadius: BorderRadius.circular(12)),
-        child: const Center(
+            borderRadius: BorderRadius.circular(10)),
+        child: Center(
             child: Text(
-          'Business',
-          style: TextStyle(fontSize: 18, color: Colors.white),
+          categories.categoryName,
+          style: const TextStyle(fontSize: 18, color: Colors.white),
         )),
       ),
     );
